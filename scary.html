@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>절대 클릭하지 마세요</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      color: white;
+      font-family: sans-serif;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    #content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      text-align: center;
+    }
+
+    #scaryImage {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: 9999;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="content">
+    <h1>위험한 링크</h1>
+    <a href="#" onclick="startScare()" style="color:red; font-size: 24px;">[ 용기가 있는 사람만 누르세요. ]</a>
+  </div>
+
+  <img id="scaryImage" src="https://images.unsplash.com/photo-1509248961158-e54f6934749c?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8JUVCJUFDJUI0JUVDJTg0JTlDJUVDJTlBJUI0fGVufDB8fDB8fHww" alt="무서운 이미지">
+" alt="무서운 이미지">
+
+  <!-- 🔊 네 녹음파일 주소를 여기에 넣으세요 -->
+  <audio id="screamAudio" src="SupMom.m4a" preload="auto"></audio>
+
+  <script>
+    function startScare() {
+      alert("이 버튼을 기어코 누르시겠습니까?");
+
+      setTimeout(function() {
+        // 무서운 이미지 나타나기
+        document.getElementById("scaryImage").style.display = "block";
+
+        // 녹음된 비명 소리 재생
+        const scream = document.getElementById("screamAudio");
+        scream.play();
+      }, 3000);
+    }
+  </script>
+
+</body>
+</html>

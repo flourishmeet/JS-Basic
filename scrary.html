@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>무서운 이야기</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      text-align: center;
+      padding-top: 100px;
+      font-family: sans-serif;
+    }
+
+    #scaryImage {
+      display: none;
+      width: 100%;
+      max-width: 800px;
+      margin-top: 50px;
+
+
+    }
+  </style>
+</head>
+<body>
+
+  <h1>무엇이 나올까요?</h1>
+  <a href="#" onclick="startScare()">한 번 눌러보세요!</a>
+
+  <img id="scaryImage" src="https://images.unsplash.com/photo-1509248961158-e54f6934749c?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8JUVCJUFDJUI0JUVDJTg0JTlDJUVDJTlBJUI0fGVufDB8fDB8fHww" alt="무서운 이미지">
+
+  <script>
+    function startScare() {
+      alert("밑에 있는 OK 버튼만 누르면 된대요!");
+      setTimeout(function() {
+        document.getElementById("scaryImage").style.display = "block";
+        // 사운드도 추가 가능
+        const scream = new Audio("https://www.soundjay.com/human/screams/female-scream-01.mp3");
+        scream.play();
+      }, 5000); // 5초 후
+    }
+  </script>
+
+</body>
+</html>
